@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:41:55 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/06 15:37:23 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:44 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	ft_atoi(const char *nptr)
 {
-	int	*stack_a;
-	int i = 0;
+	size_t	i;
+	int		res;
+	int		sign;
+	int		cpt;
 
-	stack_a = parse_input(ac, av);
-	if (!stack_a)
-		return (1);
-	while (i < 5)
+	res = 0;
+	i = 0;
+	sign = 1;
+	cpt = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	while ((nptr[i] == '-' || nptr[i] == '+'))
 	{
-		printf("%d\n", stack_a[i]);
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+		cpt++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9' && cpt < 2)
+	{
+		res = res * 10 + (nptr[i] - 48);
 		i++;
 	}
-	free(stack_a);
-	return (0);
+	return (res * sign);
 }

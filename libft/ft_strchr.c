@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/06 12:32:55 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:18 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+char	*ft_strchr(const char *s, int c)
+{
+	int		i;
+	int		firstindex;
+	char	*b;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	b = (char *) s;
+	i = ft_strlen(s);
+	firstindex = -1;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+		{
+			firstindex = i;
+		}
+		i--;
+	}
+	if (firstindex == -1)
+		return ((void *)0);
+	return (b + firstindex);
+}

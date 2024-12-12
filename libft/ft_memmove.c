@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/07 16:56:54 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:25 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*d;
+	unsigned char	*s;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	if (dest == 0 && src == 0)
+		return (0);
+	if (src < dest && src + n >= dest)
+	{
+		d = dest + n - 1;
+		s = (void *) src + n - 1;
+		while (n--)
+			*d-- = *s--;
+	}
+	else
+	{
+		d = dest;
+		s = (void *) src;
+		while (n--)
+			*d++ = *s++;
+	}
+	return (dest);
+}

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/08 11:45:18 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:27 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*p;
+	unsigned char	*s;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	p = (void *) s1;
+	s = (void *) s2;
+	while (n > 0)
+	{
+		if (*p < *s)
+			return (*p - *s);
+		if (*p > *s)
+			return (*p - *s);
+		n--;
+		p++;
+		s++;
+	}
+	return (0);
+}

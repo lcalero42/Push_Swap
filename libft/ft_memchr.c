@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/08 14:31:25 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:29 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	char			*p;
+	unsigned int	i;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	p = (void *) s;
+	i = 0;
+	while (n > 0)
+	{
+		if (*p == (char)c)
+			return ((void *)s + i);
+		n--;
+		p++;
+		i++;
+	}
+	return (0);
+}

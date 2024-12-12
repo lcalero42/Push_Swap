@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:41:55 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/11 01:24:40 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:15 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	*stack_a;
-	int i = 0;
+	size_t	i;
+	size_t	dest_len;
+	size_t	src_len;
 
-	stack_a = parse_input(ac, av);
-	if (!stack_a)
-		return (1);
-	while (i < 5)
+	dest_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	i = 0;
+	if (size <= dest_len)
+		return (size + src_len);
+	if (size > 0)
 	{
-		printf("%d\n", stack_a[i]);
-		i++;
+		while (src[i] && dest_len + i < size - 1)
+		{
+			dst[dest_len + i] = src[i];
+			i++;
+		}
+		dst[dest_len + i] = '\0';
 	}
-	free(stack_a);
-	return (0);
+	return (dest_len + src_len);
 }

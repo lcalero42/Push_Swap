@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/11 14:31:36 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:42 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
+#include <stdint.h>
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	unsigned char	*cpy;
+	void			*res;
+	size_t			total_size;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	if (nmemb > 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
+	total_size = nmemb * size;
+	res = malloc(total_size);
+	if (res == NULL)
+		return (NULL);
+	cpy = res;
+	while (total_size > 0)
+	{
+		*cpy = 0;
+		total_size--;
+		cpy++;
+	}
+	return (res);
+}

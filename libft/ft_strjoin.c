@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/12 16:04:37 by lcalero          ###   ########.fr       */
+/*   Created: 2024/11/12 12:04:57 by lcalero           #+#    #+#             */
+/*   Updated: 2024/11/19 10:23:16 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char		*res;
+	size_t		i;
+	size_t		j;
 
-int	*parse_input(int ac, char **av);
-
-#endif
+	i = 0;
+	j = 0;
+	res = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
+	while (s1[i])
+	{
+		res[j] = s1[i];
+		i++;
+		j++;
+	}
+	i = 0;
+	while (s2[i])
+	{
+		res[j] = s2[i];
+		i++;
+		j++;
+	}
+	res[j] = '\0';
+	return (res);
+}
