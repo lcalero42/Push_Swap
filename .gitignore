@@ -53,4 +53,4 @@ Mkfile.old
 dkms.conf
 
 #visualiser
-ps_visualiser/
+ps_visualiser
