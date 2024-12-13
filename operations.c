@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:44:12 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 12:24:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/13 14:59:51 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ss(int *stack_a, int *stack_b, int size_a, int size_b)
 {
 	int	temp;
 
-	if (!(size_b || size_b == 1) || (!size_a || size_a == 1))
+	if (size_b <= 1 || (!size_a || size_a == 1))
 		return ;
 	temp = stack_b[size_b - 1];
 	stack_b[size_b - 1] = stack_b[size_b - 2];

@@ -6,14 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 11:31:28 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/13 17:09:29 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static int	count_num(char *str)
+int	count_num(char *str)
 {
 	int		i;
 	int		cpt;
@@ -40,8 +40,7 @@ static int	is_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!((str[i] >= '0' && str[i] <= '9')
-				|| (str[i] == '-' || str[i] == '+')))
+		if (!(ft_isdigit(str[i]) || (str[i] == '-' || str[i] == '+')))
 			return (0);
 		i++;
 	}
@@ -52,10 +51,12 @@ static int	is_num_space(char *str)
 {
 	int	i;
 
+	if (!check_duplicates_minus_str(str))
+		return (0);
 	i = 0;
 	while (str[i])
 	{
-		if (!((str[i] >= '0' && str[i] <= '9')
+		if (!(ft_isdigit(str[i])
 				|| (str[i] == '-' || str[i] == '+') || str[i] == ' '))
 			return (0);
 		i++;
@@ -69,8 +70,8 @@ static int	*parse_single_string(char *str, int *size)
 	int	j;
 	int	*stack_a;
 
-	if (!is_num_space(str))
-		return (ft_putstr_fd("Error", 2), NULL);
+	if (!is_num_space(str) || !count_num(str))
+		print_error();
 	stack_a = malloc(count_num(str) * sizeof(int));
 	if (!stack_a)
 		return (NULL);
@@ -110,7 +111,7 @@ int	*parse_input(int ac, char **av, int *size)
 	while (i < ac)
 	{
 		if (!is_num(av[i]))
-			return (ft_putstr_fd("Error", 2), free(stack_a), NULL);
+			return (free(stack_a), print_error(), NULL);
 		stack_a[j] = ft_atoi(av[i]);
 		j++;
 		i++;

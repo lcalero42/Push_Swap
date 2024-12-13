@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 12:27:12 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/13 17:07:06 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,22 @@ int	main(int ac, char **av)
 	int	*stack_b;
 	int	i;
 	int	size_a;
-
+	
+	size_a = 0;
 	stack_a = parse_input(ac, av, &size_a);
-	if (!stack_a)
-		return (1);
+	if (!stack_a || !check_duplicates(stack_a, size_a) || !size_a
+		|| !check_wrong_minus(ac, av))
+		print_error();
 	stack_b = malloc(size_a * sizeof(int));
 	i = 0;
-	ss(stack_a, stack_b, size_a, size_a);
-	printf("a stack :\n");
+	printf("before ra :\n");
 	while (i < size_a)
 	{
 		printf("%d\n", stack_a[i]);
 		i++;
 	}
-	printf("b stack :\n");
+	ra(stack_a, size_a);
+	printf("after ra :\n");
 	i = 0;
 	while (i < size_a)
 	{
