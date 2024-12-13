@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:44:12 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 12:16:14 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/13 12:24:34 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,16 @@ void	sb(int *stack_b, int size_b)
 
 void	ss(int *stack_a, int *stack_b, int size_a, int size_b)
 {
-	sa(stack_a, size_a);
-	sb(stack_b, size_b);
+	int	temp;
+
+	if (!(size_b || size_b == 1) || (!size_a || size_a == 1))
+		return ;
+	temp = stack_b[size_b - 1];
+	stack_b[size_b - 1] = stack_b[size_b - 2];
+	stack_b[size_b - 2] = temp;
+	temp = stack_a[size_a - 1];
+	stack_a[size_a - 1] = stack_a[size_a - 2];
+	stack_a[size_a - 2] = temp;
 	ft_putstr_fd("ss\n", 1);
 }
 
