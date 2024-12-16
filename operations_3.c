@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:56:44 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/16 17:00:36 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/16 17:49:41 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	rrr(int *stack_a, int *stack_b, int size_a, int size_b)
 		i++;
 	}
 	stack_b[size_b - 1] = first;
-	ft_putstr("rrr\n");
+	ft_putstr_fd("rrr\n", 1);
 }
