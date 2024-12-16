@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 17:44:14 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/16 16:38:29 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	check_duplicates_minus_str(char *str)
 	while (str[i])
 	{
 		if (str[i] == '-' || str[i] == '+')
-			if (i != 0 && ft_isdigit(str[i + 1]))
+			if ((!ft_isdigit(str[i - 1]) && !ft_isdigit(str[i + 1])) 
+				|| (ft_isdigit(str[i - 1]) && ft_isdigit(str[i + 1])))
 				return (0);
 		i++;
 	}
