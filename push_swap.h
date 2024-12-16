@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 17:09:42 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/16 17:13:00 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b);
 void	pb(int *stack_a, int *stack_b, int *size_a, int *size_b);
 
 void	ra(int *stack_a, int size_a);
+
+void	rra(int *stack_a, int size_a);
+
+void	rrb(int *stack_b, int size_b);
+
+void	rrr(int *stack_a, int *stack_b, int size_a, int size_b);
 
 int		check_duplicates(int *stack_a, int size_a);
 

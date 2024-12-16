@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 17:07:06 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/16 16:51:54 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int	main(int ac, char **av)
 		print_error();
 	stack_b = malloc(size_a * sizeof(int));
 	i = 0;
-	printf("before ra :\n");
+	printf("before rra :\n");
 	while (i < size_a)
 	{
 		printf("%d\n", stack_a[i]);
 		i++;
 	}
-	ra(stack_a, size_a);
-	printf("after ra :\n");
+	rra(stack_a, size_a);
+	printf("after rra :\n");
 	i = 0;
 	while (i < size_a)
 	{
