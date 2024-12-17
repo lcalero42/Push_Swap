@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:39:58 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/16 17:01:10 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/17 11:25:07 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	rr(int *stack_a, int *stack_b, int size_a, int size_b)
 void	rra(int *stack_a, int size_a)
 {
 	int	i;
-	int first;
+	int	first;
 
 	if (size_a <= 1)
 		return ;
@@ -99,7 +99,7 @@ void	rra(int *stack_a, int size_a)
 void	rrb(int *stack_b, int size_b)
 {
 	int	i;
-	int first;
+	int	first;
 
 	if (size_b <= 1)
 		return ;
