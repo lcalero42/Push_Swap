@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/16 14:27:27 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/18 11:37:44 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	is_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(ft_isdigit(str[i]) || (str[i] == '-' || str[i] == '+')))
+		if (!(ft_isdigit(str[i]) || (str[i] == '-' || str[i] == '+') || str[i] == ' '))
 			return (0);
 		i++;
 	}

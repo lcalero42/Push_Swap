@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 11:13:49 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/18 11:30:40 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,6 @@ int	check_duplicates_minus_str(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (str[i] == str[i + 1] && str[i] != ' '
-			&& !ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	i = 0;
 	if (!ft_strncmp(str, "-", ft_strlen(str))
 		|| !ft_strncmp(str, "+", ft_strlen(str)))
 		return (0);
@@ -61,8 +53,6 @@ int	check_duplicates_minus_str(char *str)
 			return (0);
 		i++;
 	}
-	if (str[ft_strlen(str) - 1] == '-')
-		return (0);
 	return (1);
 }
 
