@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:44:12 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/13 14:59:51 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/18 17:25:07 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	if (!(*size_b))
 		return ;
-	stack_a[*size_a - 1] = stack_b[*size_b - 1];
+	stack_a[*size_a] = stack_b[*size_b - 1];
 	(*size_a)++;
 	(*size_b)--;
 	ft_putstr_fd("pa\n", 1);
@@ -65,7 +65,7 @@ void	pb(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	if (!(*size_a))
 		return ;
-	stack_b[*size_b - 1] = stack_a[*size_a - 1];
+	stack_b[*size_b] = stack_a[*size_a - 1];
 	(*size_b)++;
 	(*size_a)--;
 	ft_putstr_fd("pb\n", 1);

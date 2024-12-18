@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 15:21:05 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/18 19:34:45 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,23 @@ int	main(int ac, char **av)
 	int	*stack_a;
 	int	*stack_b;
 	int	size_a;
-	int i;
-	
+	int	size_b;
+
 	size_a = 0;
 	stack_a = parse_input(ac, av, &size_a);
 	if (!stack_a || !check_duplicates(stack_a, size_a) || !size_a
 		|| !check_wrong_minus(ac, av))
 		print_error();
-	stack_b = malloc(size_a * sizeof(int));
 	if (is_sorted(ac, av))
 		return (0);
-	i = 0;
-	while (i < size_a)
-	{
-		printf("%d\n", stack_a[i]);
-		i++;
-	}
-	printf("------------------------\n");
+	stack_b = malloc(size_a * sizeof(int));
+	if (!stack_b)
+		return (1);
+	size_b = 0;
 	assign_corresponding_nu(stack_a, size_a);
-	i = 0;
-	while (i < size_a)
-	{
+	radix_sort(stack_a, stack_b, size_a, size_b);
+	for (int i = 0; i < size_a; i++)
 		printf("%d\n", stack_a[i]);
-		i++;
-	}
 	free(stack_a);
 	free(stack_b);
 	return (0);

@@ -55,3 +55,6 @@ dkms.conf
 
 #visualiser
 ps_visualiser
+
+#checker
+checker_linux
