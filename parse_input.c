@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 01:14:01 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 14:32:17 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static int	av_len(char **av)
 static int	*parse_single_str(char **av, int *size)
 {
 	int	len;
+	int	i;
 	int	*stack_a;
 	
 	av = ft_split(av[1], ' ');
@@ -48,13 +49,13 @@ static int	*parse_single_str(char **av, int *size)
 	stack_a = malloc(len * sizeof(int));
 	if (!stack_a)
 		return (NULL);
-	len--;
-	while (len >= 0)
+	i = 0;
+	while (i < len)
 	{
-		stack_a[len] = ft_atoi(av[len]);
-		len--;
+		stack_a[i] = ft_atoi(av[i]);
+		i++;
 	}
-	return stack_a;
+	return (stack_a);
 }
 
 int	*parse_input(int ac, char **av, int *size)
@@ -69,15 +70,15 @@ int	*parse_input(int ac, char **av, int *size)
 	if (!stack_a)
 		return (NULL);
 	*size = ac - 1;
-	i = ac - 1;
-	j = ac - 2;
-	while (i > 1)
+	i = 1;
+	j = 0;
+	while (i < ac - 1)
 	{
 		if (!is_num(av[i]))
 			return (free(stack_a), print_error(), NULL);
 		stack_a[j] = ft_atoi(av[i]);
-		j--;
-		i--;
+		j++;
+		i++;
 	}
 	return (stack_a);
 }

@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:59:39 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 19:18:12 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:39:41 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ void	radix_sort(int *stack_a, int *stack_b, int size_a, int size_b)
 
 	max_num = size_a - 1;
 	max_bits = 0;
-	i = 0;
 	size = size_a;
 	while ((max_num >> max_bits) != 0)
 		max_bits++;
-	while (i < max_bits)
+	i = max_bits - 1;
+	while (i >= 0)
 	{
 		j = 0;
 		while (j < size)
 		{
 			num = stack_a[size_a - 1];
-			if (((num >> i) & 1) == 1 && (size_a != 1))
+			if (((num >> i) & 1) == 1)
 				ra(stack_a, size_a);
 			else
 				pb(stack_a, stack_b, &size_a, &size_b);
@@ -56,6 +56,6 @@ void	radix_sort(int *stack_a, int *stack_b, int size_a, int size_b)
 		}
 		while (size_b > 0)
 			pa(stack_a, stack_b, &size_a, &size_b);
-		i++;
+		i--;
 	}
 }

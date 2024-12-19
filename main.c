@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 00:51:20 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 15:39:53 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int	main(int ac, char **av)
 	size_b = 0;
 	assign_corresponding_nu(stack_a, size_a);
 	radix_sort(stack_a, stack_b, size_a, size_b);
-	for (int i = 0; i < size_a; i++)
-		printf("%d\n", stack_a[i]);
 	free(stack_a);
 	free(stack_b);
 	return (0);
