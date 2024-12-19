@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:57:36 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 00:56:37 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 18:03:03 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	count_num(char *str)
 	return (cpt);
 }
 
-int	is_sorted(int ac, char **av)
+int	is_sorted(int ac, char **av, int *stack_a)
 {
 	int	i;
 	char **av_cpy;
@@ -52,7 +52,7 @@ int	is_sorted(int ac, char **av)
 	}
 	while (i < size)
 	{
-		if (ft_atoi(av_cpy[i]) > ft_atoi(av_cpy[i + 1]))
+		if (ft_atoi(av_cpy[i], stack_a) > ft_atoi(av_cpy[i + 1], stack_a))
 			return (0);
 		i++;
 	}

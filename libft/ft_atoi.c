@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:37:23 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/17 11:24:41 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 18:00:32 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "stdio.h"
 #include "../push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr, int *stack_a)
 {
 	size_t	i;
 	long	res;
@@ -36,7 +36,7 @@ int	ft_atoi(const char *nptr)
 	{
 		res = res * 10 + (nptr[i] - 48);
 		if ((sign == 1 && res > INT_MAX) || (sign == -1 && res * -1 < INT_MIN))
-			print_error();
+			print_error_free(stack_a);
 		i++;
 	}
 	return ((int)res * sign);

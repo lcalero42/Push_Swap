@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 17:21:44 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 18:01:49 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	*parse_single_str(char **av, int *size)
 	i = 0;
 	while (i < len)
 	{
-		stack_a[i] = ft_atoi(av[i]);
+		stack_a[i] = ft_atoi(av[i], stack_a);
 		i++;
 	}
 	return (stack_a);
@@ -76,10 +76,11 @@ int	*parse_input(int ac, char **av, int *size)
 	{
 		if (!is_num(av[i]))
 			return (free(stack_a), print_error(), NULL);
-		stack_a[j] = ft_atoi(av[i]);
+		stack_a[j] = ft_atoi(av[i], stack_a);
 		j++;
 		i++;
 	}
+	check_wrong_minus(ac, av, stack_a);
 	check_duplicates(stack_a, *size);
 	return (stack_a);
 }

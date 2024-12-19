@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 16:38:37 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 18:02:51 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int		check_duplicates_minus_str(char *str);
 
 void	print_error(void);
 
-int		check_wrong_minus(int ac, char **av);
+int		check_wrong_minus(int ac, char **av, int *stack_a);
 
-int		is_sorted(int ac, char **av);
+int		is_sorted(int ac, char **av, int *stack_a);
 
 void	assign_corresponding_nu(int *stack_a, int size_a);
 

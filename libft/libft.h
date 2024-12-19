@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:37:37 by lcalero           #+#    #+#             */
-/*   Updated: 2024/11/20 10:33:04 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 18:00:48 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
 
-int		ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr, int *stack_a);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 

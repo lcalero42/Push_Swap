@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 17:03:02 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 17:52:49 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	check_duplicates_minus_str(char *str)
 	return (1);
 }
 
-int	check_wrong_minus(int ac, char **av)
+int	check_wrong_minus(int ac, char **av, int *stack_a)
 {
 	int	i;
 
@@ -65,6 +65,7 @@ int	check_wrong_minus(int ac, char **av)
 	{
 		if (!check_duplicates_minus_str(av[i]))
 		{
+			free(stack_a);
 			print_error();
 			return (0);
 		}
