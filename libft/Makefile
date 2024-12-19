@@ -28,19 +28,19 @@ BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 %.o: %.c ${HEADER}
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(NAME) $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
+	@ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJ)
+	@rm -f $(OBJS) $(BONUS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

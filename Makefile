@@ -18,21 +18,23 @@ LIBFT = $(LIBFT_DIR)/libft.a
 all = $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJS)
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
+	@echo building push_swap...
 
 $(OBJS_DIR)/%.o: %.c ${HEADERS}
 	@mkdir -p $(OBJS_DIR)
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR) all
+	@$(MAKE) -C $(LIBFT_DIR) all
 
 clean:
-	rm -rf $(OBJS_DIR)
-	$(MAKE) -C $(LIBFT_DIR) clean
+	@rm -rf $(OBJS_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@echo removing objects files...
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 

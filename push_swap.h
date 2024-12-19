@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 16:50:59 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 00:56:45 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int		check_duplicates_minus_str(char *str);
 void	print_error(void);
 
 int		check_wrong_minus(int ac, char **av);
-
-int		count_num(char *str);
 
 int		is_sorted(int ac, char **av);
 

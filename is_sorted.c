@@ -6,11 +6,31 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:57:36 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 14:45:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 00:56:37 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	count_num(char *str)
+{
+	int		i;
+	int		cpt;
+
+	i = 0;
+	cpt = 0;
+	while (str[i])
+	{
+		while (str[i] == ' ' && str[i])
+			i++;
+		if (str[i] == '\0')
+			break ;
+		cpt++;
+		while (str[i] != ' ' && str[i])
+			i++;
+	}
+	return (cpt);
+}
 
 int	is_sorted(int ac, char **av)
 {
