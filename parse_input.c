@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 14:32:17 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 17:21:44 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	*parse_input(int ac, char **av, int *size)
 	*size = ac - 1;
 	i = 1;
 	j = 0;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		if (!is_num(av[i]))
 			return (free(stack_a), print_error(), NULL);
@@ -80,5 +80,6 @@ int	*parse_input(int ac, char **av, int *size)
 		j++;
 		i++;
 	}
+	check_duplicates(stack_a, *size);
 	return (stack_a);
 }

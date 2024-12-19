@@ -6,13 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/18 11:30:40 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 17:03:02 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-int	check_duplicates(int *stack_a, int size_a)
+void	check_duplicates(int *stack_a, int size_a)
 {
 	int	i;
 	int	j;
@@ -25,15 +26,14 @@ int	check_duplicates(int *stack_a, int size_a)
 		{
 			if (stack_a[i] == stack_a[j])
 			{
+				free(stack_a);
 				print_error();
-				return (0);
 			}
 			j++;
 		}
 		i++;
 		j = i + 1;
 	}
-	return (1);
 }
 
 int	check_duplicates_minus_str(char *str)

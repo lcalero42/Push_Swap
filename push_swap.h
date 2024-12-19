@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 00:56:45 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/19 16:38:37 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rrb(int *stack_b, int size_b);
 
 void	rrr(int *stack_a, int *stack_b, int size_a, int size_b);
 
-int		check_duplicates(int *stack_a, int size_a);
+void	check_duplicates(int *stack_a, int size_a);
 
 int		check_duplicates_minus_str(char *str);
 
@@ -49,6 +49,6 @@ int		is_sorted(int ac, char **av);
 
 void	assign_corresponding_nu(int *stack_a, int size_a);
 
-void	radix_sort(int *stack_a, int *stack_b, int size_a, int size_b);
+void	turkish_algorithm(int *stack_a, int *stack_b, int size_a, int size_b);
 
 #endif
