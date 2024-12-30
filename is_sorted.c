@@ -6,13 +6,13 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:57:36 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 18:03:03 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/30 14:27:29 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	count_num(char *str)
+/*static int	count_num(char *str)
 {
 	int		i;
 	int		cpt;
@@ -30,29 +30,16 @@ static int	count_num(char *str)
 			i++;
 	}
 	return (cpt);
-}
+}*/
 
-int	is_sorted(int ac, char **av, int *stack_a)
+int	is_sorted(int *stack_a, int size_a)
 {
 	int	i;
-	char **av_cpy;
-	int size;
-
-	if (ac == 2)
+	
+	i = 0;
+	while (i < size_a - 1)
 	{
-		av_cpy = ft_split(av[1], ' ');
-		i = 0;
-		size = count_num(av[1]) - 1;
-	}
-	else
-	{
-		av_cpy = av;
-		i = 1;
-		size = ac - 1;
-	}
-	while (i < size)
-	{
-		if (ft_atoi(av_cpy[i], stack_a) > ft_atoi(av_cpy[i + 1], stack_a))
+		if (stack_a[i] > stack_a[i + 1])
 			return (0);
 		i++;
 	}

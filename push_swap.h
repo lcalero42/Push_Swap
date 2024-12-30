@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 18:02:51 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/30 14:26:04 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int		check_duplicates_minus_str(char *str);
 
 void	print_error(void);
 
+void	print_error_free(int *stack_a);
+
 int		check_wrong_minus(int ac, char **av, int *stack_a);
 
-int		is_sorted(int ac, char **av, int *stack_a);
-
-void	assign_corresponding_nu(int *stack_a, int size_a);
+int		is_sorted(int *stack_a, int size_a);
 
 void	turkish_algorithm(int *stack_a, int *stack_b, int size_a, int size_b);
 

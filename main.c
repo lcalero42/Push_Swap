@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 18:02:42 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/30 14:26:40 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,16 @@ int	main(int ac, char **av)
 	int	*stack_a;
 	int	*stack_b;
 	int	size_a;
-	int	size_b;
 
 	size_a = 0;
 	stack_a = parse_input(ac, av, &size_a);
 	if (!stack_a || !size_a)
 		return (1);
-	if (is_sorted(ac, av, stack_a))
+	if (is_sorted(stack_a, size_a))
 		return (free(stack_a), 0);
 	stack_b = malloc(size_a * sizeof(int));
 	if (!stack_b)
 		return (1);
-	size_b = 0;
-	assign_corresponding_nu(stack_a, size_a);
 	free(stack_a);
 	free(stack_b);
 	return (0);

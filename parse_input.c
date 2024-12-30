@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 18:01:49 by lcalero          ###   ########.fr       */
+/*   Updated: 2024/12/30 14:35:17 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,19 @@ static int	av_len(char **av)
 	return (i);
 }
 
+static void ft_free(char **av, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
+}
+
 static int	*parse_single_str(char **av, int *size)
 {
 	int	len;
@@ -44,6 +57,8 @@ static int	*parse_single_str(char **av, int *size)
 	int	*stack_a;
 	
 	av = ft_split(av[1], ' ');
+	if (!av)
+		return (NULL);
 	len = av_len(av);
 	*size = len;
 	stack_a = malloc(len * sizeof(int));
@@ -52,9 +67,14 @@ static int	*parse_single_str(char **av, int *size)
 	i = 0;
 	while (i < len)
 	{
+		if (!is_num(av[i]))
+			return (free(stack_a), ft_free(av, len), print_error(), NULL);
 		stack_a[i] = ft_atoi(av[i], stack_a);
 		i++;
 	}
+	check_wrong_minus(len, av, stack_a);
+	check_duplicates(stack_a, *size);
+	ft_free(av, len);
 	return (stack_a);
 }
 
