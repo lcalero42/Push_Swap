@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/30 14:26:04 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/06 15:49:42 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ int		check_wrong_minus(int ac, char **av, int *stack_a);
 int		is_sorted(int *stack_a, int size_a);
 
 void	turkish_algorithm(int *stack_a, int *stack_b, int size_a, int size_b);
+
+int		find_min(int *stack, int size);
+
+int		find_max(int *stack, int size);
+
+int		find_place(int *stack_b, int size_b, int c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:57:36 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/30 14:27:29 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/06 11:20:45 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 int	is_sorted(int *stack_a, int size_a)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < size_a - 1)
 	{

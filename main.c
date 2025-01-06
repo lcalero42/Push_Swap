@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/30 14:26:40 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/06 13:46:54 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int ac, char **av)
 	stack_b = malloc(size_a * sizeof(int));
 	if (!stack_b)
 		return (1);
+	printf("%d\n", find_max(stack_a, size_a));
 	free(stack_a);
 	free(stack_b);
 	return (0);

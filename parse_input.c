@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/30 14:35:17 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/06 16:13:56 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static int	is_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(ft_isdigit(str[i]) || (str[i] == '-' || str[i] == '+') || str[i] == ' '))
+		if (!(ft_isdigit(str[i]) || (str[i] == '-'
+					|| str[i] == '+') || str[i] == ' '))
 			return (0);
 		i++;
 	}
@@ -37,7 +38,7 @@ static int	av_len(char **av)
 	return (i);
 }
 
-static void ft_free(char **av, int size)
+static void	ft_free(char **av, int size)
 {
 	int	i;
 
@@ -55,7 +56,7 @@ static int	*parse_single_str(char **av, int *size)
 	int	len;
 	int	i;
 	int	*stack_a;
-	
+
 	av = ft_split(av[1], ' ');
 	if (!av)
 		return (NULL);
@@ -63,7 +64,7 @@ static int	*parse_single_str(char **av, int *size)
 	*size = len;
 	stack_a = malloc(len * sizeof(int));
 	if (!stack_a)
-		return (NULL);
+		return (free(av), NULL);
 	i = 0;
 	while (i < len)
 	{
