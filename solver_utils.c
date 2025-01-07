@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_3.c                                     :+:      :+:    :+:   */
+/*   solver_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 16:56:44 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 19:15:34 by lcalero          ###   ########.fr       */
+/*   Created: 2025/01/07 14:03:06 by lcalero           #+#    #+#             */
+/*   Updated: 2025/01/07 15:41:46 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrr(int *stack_a, int *stack_b, int size_a, int size_b)
+int	case_rarb(int *stack_a, int *stack_b, t_sizes sizes, int c)
 {
 	int	i;
-	int	last;
 
-	if (size_a <= 1 || size_b <= 1)
-		return ;
-	i = 0;
-	last = stack_a[size_a - 1];
-	i = size_a - 1;
-	while (i > 0)
-	{
-		stack_a[i] = stack_a[i - 1];
-		i--;
-	}
-	stack_a[0] = last;
-	i = 0;
-	last = stack_b[size_b - 1];
-	i = size_b - 1;
-	while (i > 0)
-	{
-		stack_b[i] = stack_b[i - 1];
-		i--;
-	}
-	stack_b[0] = last;
-	ft_putstr_fd("rrr\n", 1);
+	i = (sizes.b - 1) - find_place(stack_b, sizes.b, c);
+	if (sizes.a - find_index(stack_a, c) < i)
+		i = sizes.a - find_index(stack_a, c);
+	return (i);
 }
