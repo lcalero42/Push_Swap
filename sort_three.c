@@ -6,13 +6,13 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:17:02 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 19:59:47 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:16:56 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    sort_three(int *stack)
+void	sort_three(int *stack)
 {
 	if (find_min(stack, 3) == stack[0])
 	{

@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:44:12 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 18:53:47 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:16:10 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ss(int *stack_a, int *stack_b, int size_a, int size_b)
 void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	int	i;
-	
+
 	if (!(*size_b))
 		return ;
 	i = *size_a;
@@ -79,7 +79,7 @@ void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b)
 void	pb(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	int	i;
-	
+
 	if (!(*size_a))
 		return ;
 	i = *size_b;

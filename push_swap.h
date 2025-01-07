@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 19:23:13 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:16:34 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ int		case_rarb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
 void	reverse_array(int *stack, int size);
 
-void    sort_three(int *stack);
+void	sort_three(int *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:41:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 17:18:58 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:16:45 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	reverse_array(int *stack, int size)
 {
 	int	i;
 	int	tmp;
-	
+
 	i = 0;
 	while (i < size / 2)
 	{
