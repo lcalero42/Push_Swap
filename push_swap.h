@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 11:15:21 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 16:17:24 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,13 @@ void	pb(int *stack_a, int *stack_b, int *size_a, int *size_b);
 
 void	ra(int *stack_a, int size_a);
 
+void	rb(int *stack_b, int size_b);
+
 void	rra(int *stack_a, int size_a);
 
 void	rrb(int *stack_b, int size_b);
+
+void	rr(int *stack_a, int *stack_b, int size_a, int size_b);
 
 void	rrr(int *stack_a, int *stack_b, int size_a, int size_b);
 
@@ -55,7 +59,7 @@ int		check_wrong_minus(int ac, char **av, int *stack_a);
 
 int		is_sorted(int *stack_a, int size_a);
 
-void	turkish_algorithm(int *stack_a, int *stack_b, t_sizes sizes);
+void	turkish_algorithm(int *stack_a, int *stack_b, t_sizes *sizes);
 
 int		find_min(int *stack, int size);
 
@@ -76,5 +80,13 @@ int		case_rarrb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 void	reverse_array(int *stack, int size);
 
 void	sort_three(int *stack);
+
+void	apply_rarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+void	apply_rrarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+void	apply_rrarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+void	apply_rarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
 #endif

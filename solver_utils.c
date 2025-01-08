@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:03:06 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 11:47:42 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 14:05:55 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	case_rrarrb(int *stack_a, int *stack_b, t_sizes sizes, int c)
 int	case_rrarb(int *stack_a, int *stack_b, t_sizes sizes, int c)
 {
 	int	i;
-	
+
 	i = 0;
 	if (find_index(stack_a, c))
 		i = sizes.a - find_index(stack_a, c);
@@ -48,7 +48,7 @@ int	case_rrarb(int *stack_a, int *stack_b, t_sizes sizes, int c)
 int	case_rarrb(int *stack_a, int *stack_b, t_sizes sizes, int c)
 {
 	int	i;
-	
+
 	i = 0;
 	if (find_place(stack_b, sizes.b, c))
 		i = sizes.b - find_place(stack_a, sizes.b, c);

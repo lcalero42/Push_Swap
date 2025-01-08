@@ -6,7 +6,7 @@ NAME = push_swap
 SRCS = operations.c operations_2.c operations_3.c parse_input.c print_error.c ../libft/ft_isdigit.c \
 		../libft/ft_atoi.c ../libft/ft_putstr_fd.c ../libft/ft_strncmp.c ../libft/ft_strlen.c \
 		checker_functions.c main.c is_sorted.c ../libft/ft_split.c turkish_algorithm.c \
-		algorithm_utils.c solver_utils.c sort_three.c
+		algorithm_utils.c solver_utils.c sort_three.c apply_moves_b.c
 HEADERS = push_swap.h libft/libft.h
 
 OBJS_DIR = objects

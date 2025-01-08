@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 11:16:49 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 18:27:35 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	main(int ac, char **av)
 	// 	i++;
 	// }
 	i = 0;
-	turkish_algorithm(stack_a, stack_b, sizes);
-	// while (i < sizes.a)
+	turkish_algorithm(stack_a, stack_b, &sizes);
+	// while (i < sizes.b)
 	// {
-	// 	printf("%d\n", stack_a[i]);
+	// 	printf("%d\n", stack_b[i]);
 	// 	i++;
 	// }
 	free(stack_a);
