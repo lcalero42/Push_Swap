@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 20:16:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 11:15:21 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ int		find_place(int *stack_b, int size_b, int c);
 int		find_index(int *stack, int c);
 
 int		case_rarb(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rrarrb(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rrarb(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rarrb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
 void	reverse_array(int *stack, int size);
 

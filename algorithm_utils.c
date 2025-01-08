@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:41:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 20:16:45 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 12:20:11 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,8 @@ int	find_place(int *stack_b, int size_b, int c)
 	int	i;
 
 	i = size_b - 1;
-	if (c > find_max(stack_b, size_b))
-		return (find_index(stack_b, find_max(stack_b, size_b)) + 1);
-	if (c < find_min(stack_b, size_b))
-		return (find_index(stack_b, find_min(stack_b, size_b)));
+	if (c > find_max(stack_b, size_b) || c < find_min(stack_b, size_b))
+		return (find_index(stack_b, find_max(stack_b, size_b)));
 	while (i > 0)
 	{
 		if (c > stack_b[i - 1] && c < stack_b[i])
@@ -70,19 +68,4 @@ int	find_place(int *stack_b, int size_b, int c)
 		i--;
 	}
 	return (-1);
-}
-
-void	reverse_array(int *stack, int size)
-{
-	int	i;
-	int	tmp;
-
-	i = 0;
-	while (i < size / 2)
-	{
-		tmp = stack[i];
-		stack[i] = stack[size - i - 1];
-		stack[size - i - 1] = tmp;
-		i++;
-	}
 }

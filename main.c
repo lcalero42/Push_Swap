@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 20:07:20 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/08 11:16:49 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,18 @@ int	main(int ac, char **av)
 	if (!stack_b)
 		return (1);
 	sizes.b = 0;
-	reverse_array(stack_a, sizes.a);
-	while (i < sizes.a)
-	{
-		printf("%d\n", stack_a[i]);
-		i++;
-	}
+	// while (i < sizes.a)
+	// {
+	// 	printf("%d\n", stack_a[i]);
+	// 	i++;
+	// }
 	i = 0;
-	sort_three(stack_a);
-	while (i < sizes.a)
-	{
-		printf("%d\n", stack_a[i]);
-		i++;
-	}
+	turkish_algorithm(stack_a, stack_b, sizes);
+	// while (i < sizes.a)
+	// {
+	// 	printf("%d\n", stack_a[i]);
+	// 	i++;
+	// }
 	free(stack_a);
 	free(stack_b);
 	return (0);
