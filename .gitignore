@@ -54,7 +54,7 @@ Mkfile.old
 dkms.conf
 
 #visualiser
-ps_visualiser
+push_swap_visualizer
 
 #checker
 checker_linux
