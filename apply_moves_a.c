@@ -6,13 +6,12 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:35:45 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 16:47:28 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 19:12:13 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /*This function applies the right amount of rotation 
 to the top of the stack to both stacks when pushing from b to a

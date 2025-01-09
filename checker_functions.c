@@ -6,12 +6,11 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2024/12/19 17:52:49 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 19:12:22 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	check_duplicates(int *stack_a, int size_a)
 {

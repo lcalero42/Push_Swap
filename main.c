@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 17:26:07 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 18:56:11 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int	main(int ac, char **av)
 	int		*stack_a;
 	int		*stack_b;
 	t_sizes	sizes;
-	int	i = 0;
-
+	
 	if (ac == 1)
 		return (1);
 	sizes.a = 0;
@@ -32,18 +31,7 @@ int	main(int ac, char **av)
 	if (!stack_b)
 		return (1);
 	sizes.b = 0;
-	// while (i < sizes.a)
-	// {
-	//  	printf("%d\n", stack_a[i]);
-	//  	i++;
-	// }
 	sort(stack_a, stack_b, &sizes);
-	i = 0;
-	// while (i < sizes.a)
-	// {
-	// 	printf("%d\n", stack_a[i]);
-	// 	i++;
-	// }
 	free(stack_a);
 	free(stack_b);
 	return (0);

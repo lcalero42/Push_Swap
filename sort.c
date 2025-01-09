@@ -6,12 +6,11 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:51:06 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 17:26:30 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 19:13:27 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /*This function does all the sorting process and sort the min
 if it does not end in the right position*/

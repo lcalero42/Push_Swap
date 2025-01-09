@@ -6,12 +6,11 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:51:20 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 17:23:15 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 19:13:35 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 /*This function returns the amount of rotation minimum 
 that is needed to put the number we are checking at the top of
@@ -128,9 +127,7 @@ void	sort_b(int *stack_a, int *stack_b, t_sizes *sizes)
 	if (sizes->a > 3 && !is_sorted(stack_a, sizes->a))
 		pb(stack_a, stack_b, &sizes->a, &sizes->b);
 	if (sizes->a > 3 && !is_sorted(stack_a, sizes->a))
-	{
 		turkish_algorithm_b(stack_a, stack_b, sizes);
-		if (sizes->a == 3 && !is_sorted(stack_a, sizes->a))
-			sort_three(stack_a);
-	}
+	if (sizes->a == 3 && !is_sorted(stack_a, sizes->a))
+		sort_three(stack_a);
 }

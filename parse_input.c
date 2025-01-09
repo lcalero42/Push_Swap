@@ -6,12 +6,11 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/06 16:13:56 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 19:13:02 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static int	is_num(char *str)
 {
