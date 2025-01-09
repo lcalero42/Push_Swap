@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 16:17:24 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:08:17 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ int		find_min(int *stack, int size);
 
 int		find_max(int *stack, int size);
 
-int		find_place(int *stack_b, int size_b, int c);
+int		find_place(int *array_b, int size_b, int nbrpushed);
+
+int		find_place_a(int *array_a, int size_a, int nbrpushed);
 
 int		find_index(int *stack, int c);
 
@@ -77,16 +79,38 @@ int		case_rrarb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
 int		case_rarrb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
+int		case_rarb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rrarrb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rrarb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
+int		case_rarrb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
+
 void	reverse_array(int *stack, int size);
 
 void	sort_three(int *stack);
 
-void	apply_rarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+int		apply_rarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
-void	apply_rrarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+int		apply_rrarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
-void	apply_rrarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+int		apply_rrarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
-void	apply_rarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+int		apply_rarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+int		apply_rarb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+int		apply_rrarrb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+int		apply_rrarb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+int		apply_rarrb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
+
+void	sort_b(int *stack_a, int *stack_b, t_sizes *sizes);
+
+void	sort_a(int *stack_a, int *stack_b, t_sizes *sizes);
+
+void	sort(int *stack_a, int *stack_b, t_sizes *sizes);
 
 #endif

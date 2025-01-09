@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:41:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 18:18:07 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:57:31 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,52 @@ int	find_index(int *stack, int c)
 	return (i);
 }
 
-int	find_place(int *stack_b, int size_b, int c)
+int	find_place(int *array_b, int size_b, int nbrpushed)
 {
 	int	i;
+	int	index;
 
-	i = 1;
-	if (c > stack_b[0] && c < stack_b[size_b - 1])
+	i = 0;
+	index = 1;
+	if (size_b <= 0)
 		return (0);
-	if (c > find_max(stack_b, size_b) || c < find_min(stack_b, size_b))
-		return (find_index(stack_b, find_max(stack_b, size_b)));
-	while ((stack_b[i] < c || stack_b[i + 1] > c) && (i < size_b))
+	if (nbrpushed > array_b[i] && nbrpushed < array_b[size_b - 1])
+		index = 0;
+	else if (nbrpushed > find_max(array_b, size_b)
+		|| nbrpushed < find_min(array_b, size_b))
+		index = find_index(array_b, find_max(array_b, size_b));
+	else
 	{
-		i++;
+		while (array_b[i] < nbrpushed || array_b[i + 1] > nbrpushed)
+		{
+			index++;
+			i++;
+		}
 	}
-	return (i);
+	return (index);
+}
+
+int	find_place_a(int *array_a, int size_a, int nbrpushed)
+{
+	int	i;
+	int	index;
+
+	i = 0;
+	index = 1;
+	if (size_a <= 0)
+		return (0);
+	if (nbrpushed < array_a[i] && nbrpushed > array_a[size_a - 1])
+		index = 0;
+	else if (nbrpushed > find_max(array_a, size_a)
+		|| nbrpushed < find_min(array_a, size_a))
+		index = find_index(array_a, find_min(array_a, size_a));
+	else
+	{
+		while (array_a[i] > nbrpushed || array_a[i + 1] < nbrpushed)
+		{
+			index++;
+			i++;
+		}
+	}
+	return (index);
 }

@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/08 18:27:35 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:26:07 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int ac, char **av)
 	t_sizes	sizes;
 	int	i = 0;
 
+	if (ac == 1)
+		return (1);
 	sizes.a = 0;
 	stack_a = parse_input(ac, av, &sizes.a);
 	if (!stack_a || !sizes.a)
@@ -32,14 +34,14 @@ int	main(int ac, char **av)
 	sizes.b = 0;
 	// while (i < sizes.a)
 	// {
-	// 	printf("%d\n", stack_a[i]);
-	// 	i++;
+	//  	printf("%d\n", stack_a[i]);
+	//  	i++;
 	// }
+	sort(stack_a, stack_b, &sizes);
 	i = 0;
-	turkish_algorithm(stack_a, stack_b, &sizes);
-	// while (i < sizes.b)
+	// while (i < sizes.a)
 	// {
-	// 	printf("%d\n", stack_b[i]);
+	// 	printf("%d\n", stack_a[i]);
 	// 	i++;
 	// }
 	free(stack_a);
