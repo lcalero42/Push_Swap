@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:51:20 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 19:13:35 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/10 13:46:54 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,6 @@ void	sort_b(int *stack_a, int *stack_b, t_sizes *sizes)
 		pb(stack_a, stack_b, &sizes->a, &sizes->b);
 	if (sizes->a > 3 && !is_sorted(stack_a, sizes->a))
 		turkish_algorithm_b(stack_a, stack_b, sizes);
-	if (sizes->a == 3 && !is_sorted(stack_a, sizes->a))
+	if (!is_sorted(stack_a, sizes->a))
 		sort_three(stack_a);
 }
