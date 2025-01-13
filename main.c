@@ -6,12 +6,11 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 18:56:11 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 11:52:04 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
