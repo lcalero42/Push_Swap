@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 15:36:01 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 15:41:58 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include "libft/libft.h"
 
+//struct for sizes of stacks
 typedef struct s_sizes
 {
 	int	a;
 	int	b;
 }	t_sizes;
 
-int		*parse_input(int ac, char **av, int *size);
-
+//operations
 void	sa(int *stack_a, int size);
 
 void	sb(int *stack_b, int size);
@@ -45,6 +45,9 @@ void	rr(int *stack_a, int *stack_b, int size_a, int size_b);
 
 void	rrr(int *stack_a, int *stack_b, int size_a, int size_b);
 
+//parsing functions
+int		*parse_input(int ac, char **av, int *size);
+
 void	check_duplicates(int *stack_a, int size_a);
 
 int		check_duplicates_minus_str(char *str);
@@ -55,6 +58,7 @@ void	print_error_free(int *stack_a);
 
 int		check_wrong_minus(int ac, char **av, int *stack_a);
 
+//algorithm utils
 int		is_sorted(int *stack_a, int size_a);
 
 void	turkish_algorithm(int *stack_a, int *stack_b, t_sizes *sizes);
@@ -69,6 +73,7 @@ int		find_place_a(int *array_a, int size_a, int nbrpushed);
 
 int		find_index(int *stack, int c);
 
+//rotation cases
 int		case_rarb(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
 int		case_rrarrb(int *stack_a, int *stack_b, t_sizes sizes, int c);
@@ -85,10 +90,7 @@ int		case_rrarb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
 int		case_rarrb_a(int *stack_a, int *stack_b, t_sizes sizes, int c);
 
-void	reverse_array(int *stack, int size);
-
-void	sort_three(int *stack);
-
+//applying operations functions
 int		apply_rarb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
 int		apply_rrarrb_b(int *stack_a, int *stack_b, int c, t_sizes *sizes);
@@ -105,10 +107,13 @@ int		apply_rrarb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
 int		apply_rarrb_a(int *stack_a, int *stack_b, int c, t_sizes *sizes);
 
+//main sorting functions
 void	sort_b(int *stack_a, int *stack_b, t_sizes *sizes);
 
 void	sort_a(int *stack_a, int *stack_b, t_sizes *sizes);
 
 void	sort(int *stack_a, int *stack_b, t_sizes *sizes);
+
+void	sort_three(int *stack);
 
 #endif
