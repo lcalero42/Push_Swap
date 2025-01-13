@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:51:20 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 11:50:23 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 11:54:59 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ void	turkish_algorithm_b(int *stack_a, int *stack_b, t_sizes *sizes)
 /*This function will sort all the numbers of stack_b into stack_a
 by calculating operations for each number of stack_b to find the 
 number that requires the least amount of operations*/
-#include <stdio.h>
 void	sort_a(int *stack_a, int *stack_b, t_sizes *sizes)
 {
 	int	i;

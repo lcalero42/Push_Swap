@@ -6,12 +6,15 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 19:12:22 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:21:36 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*This function checks if the input contains duplicate
+numbers, if it does, it frees the stack and returns an
+error*/
 void	check_duplicates(int *stack_a, int size_a)
 {
 	int	i;
@@ -35,6 +38,9 @@ void	check_duplicates(int *stack_a, int size_a)
 	}
 }
 
+/*This function checks if the minus and plus 
+are valid in the input (example : no single minus in
+the input)*/
 int	check_duplicates_minus_str(char *str)
 {
 	int	i;
@@ -54,7 +60,8 @@ int	check_duplicates_minus_str(char *str)
 	}
 	return (1);
 }
-
+/*This function processes the minus/plus checkings for
+every arguments in entry*/
 int	check_wrong_minus(int ac, char **av, int *stack_a)
 {
 	int	i;

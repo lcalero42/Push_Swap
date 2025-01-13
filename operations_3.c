@@ -6,12 +6,13 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:56:44 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 19:15:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:38:51 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*applies rra and rrb in one single operation*/
 void	rrr(int *stack_a, int *stack_b, int size_a, int size_b)
 {
 	int	i;

@@ -6,16 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:17:02 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 19:20:14 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:51:14 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*This function sorts the stack_a when its size is
-3, because the maximum amount of operation for 3
-numbers in a stack is 2, so no need to apply
-the turkish logic there*/
+3 by applying only 2 operations maximum*/
 void	sort_three(int *stack)
 {
 	if (find_min(stack, 3) == stack[0])

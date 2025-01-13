@@ -6,12 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:44:12 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/07 20:16:10 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:38:12 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*sa : swap the values of the two elements at
+the top of stack_a*/
 void	sa(int *stack_a, int size_a)
 {
 	int	temp;
@@ -24,6 +26,8 @@ void	sa(int *stack_a, int size_a)
 	ft_putstr_fd("sa\n", 1);
 }
 
+/*sb : swap the values of the two elements at
+the top of stack_b*/
 void	sb(int *stack_b, int size_b)
 {
 	int	temp;
@@ -36,6 +40,7 @@ void	sb(int *stack_b, int size_b)
 	ft_putstr_fd("sb\n", 1);
 }
 
+/*applies sa and sb in one single operation*/
 void	ss(int *stack_a, int *stack_b, int size_a, int size_b)
 {
 	int	temp;
@@ -51,6 +56,10 @@ void	ss(int *stack_a, int *stack_b, int size_a, int size_b)
 	ft_putstr_fd("ss\n", 1);
 }
 
+/*pa : pushes the top element of stack_b to stack_a
+(and thus, shifts all the elements of stack_a
+to the right and also shifts all the elements 
+of stack_b to the left)*/
 void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	int	i;
@@ -76,6 +85,10 @@ void	pa(int *stack_a, int *stack_b, int *size_a, int *size_b)
 	ft_putstr_fd("pa\n", 1);
 }
 
+/*pb : pushes the top element of stack_a to stack_b
+(and thus, shifts all the elements of stack_b
+to the right and also shifts all the elements 
+of stack_a to the left)*/
 void	pb(int *stack_a, int *stack_b, int *size_a, int *size_b)
 {
 	int	i;

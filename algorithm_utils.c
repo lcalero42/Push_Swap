@@ -6,12 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:41:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/09 17:57:31 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:15:56 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*This function finds the minimum number in a 
+given stack and return this number*/
 int	find_min(int *stack, int size)
 {
 	int	i;
@@ -28,6 +30,8 @@ int	find_min(int *stack, int size)
 	return (min);
 }
 
+/*This function finds the maximum number in a 
+given stack and return this number*/
 int	find_max(int *stack, int size)
 {
 	int	i;
@@ -43,7 +47,8 @@ int	find_max(int *stack, int size)
 	}
 	return (max);
 }
-
+/*This function returns the index of a 
+given number in a stack*/
 int	find_index(int *stack, int c)
 {
 	int	i;
@@ -54,6 +59,10 @@ int	find_index(int *stack, int c)
 	return (i);
 }
 
+/*This function finds the place where the nbrpushed should
+be in stack_b (above the maximum in stack_b if the number
+is a minimum or maximum and between a smaller and bigger
+number for a regular number)*/
 int	find_place(int *array_b, int size_b, int nbrpushed)
 {
 	int	i;
@@ -79,6 +88,10 @@ int	find_place(int *array_b, int size_b, int nbrpushed)
 	return (index);
 }
 
+/*This function finds the place where the nbrpushed should
+be in stack_a (above the minimum in stack_a if the number
+is a minimum or maximum and between a smaller and bigger
+number for a regular number)*/
 int	find_place_a(int *array_a, int size_a, int nbrpushed)
 {
 	int	i;

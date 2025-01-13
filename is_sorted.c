@@ -6,12 +6,14 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:57:36 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/10 12:39:26 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 12:22:09 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*This function checks if the stack in 
+parameter is sorted*/
 int	is_sorted(int *stack_a, int size_a)
 {
 	int	i;
