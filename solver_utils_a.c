@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 15:52:35 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 12:49:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 14:01:43 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*This function calculates the number of rotations(rarb) needed 
 on stack_a and stack_b to be able to push c from b to a*/
-int case_rarb_a(int *stack_a, int *stack_b, t_sizes sizes, int c)
+int	case_rarb_a(int *stack_a, int *stack_b, t_sizes sizes, int c)
 {
 	int	i;
 

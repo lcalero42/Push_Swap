@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 16:51:06 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 11:10:22 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 14:02:13 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ if it does not end in the right position*/
 void	sort(int *stack_a, int *stack_b, t_sizes *sizes)
 {
 	int	i;
-	
+
 	i = 0;
 	if (sizes->a == 2)
 		sa(stack_a, sizes->a);

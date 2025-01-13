@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:29:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 11:52:04 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 14:03:23 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	int		*stack_a;
 	int		*stack_b;
 	t_sizes	sizes;
-	
+
 	if (ac == 1)
 		return (1);
 	sizes.a = 0;

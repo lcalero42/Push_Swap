@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:41:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 12:15:56 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/13 14:02:36 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	find_max(int *stack, int size)
 	}
 	return (max);
 }
+
 /*This function returns the index of a 
 given number in a stack*/
 int	find_index(int *stack, int c)
