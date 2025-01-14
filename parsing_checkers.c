@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 17:32:25 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 17:36:02 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,10 @@ int	check_wrong_minus(int ac, char **av, int *stack_a, int single)
 	return (1);
 }
 
-size_t	countnum(char *argv)
+int	countnum(char *argv)
 {
-	size_t	size;
-	size_t	i;
+	int	size;
+	int	i;
 
 	i = 0;
 	size = 0;
