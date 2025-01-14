@@ -12,7 +12,8 @@ BONUS_SRCS = operations.c operations_2.c operations_3.c parse_input.c print_erro
 		../libft/ft_atoi.c ../libft/ft_putstr_fd.c ../libft/ft_strncmp.c ../libft/ft_strlen.c \
 		checker_functions.c is_sorted.c ../libft/ft_split.c turkish_algorithm.c \
 		algorithm_utils.c solver_utils.c sort_three.c apply_moves_b.c apply_moves_a.c \
-		solver_utils_a.c sort.c
+		solver_utils_a.c sort.c checker_bonus.c ../libft/get_next_line.c ../libft/ft_memcpy.c \
+		../libft/ft_strchr.c ../libft/ft_bzero.c
 HEADERS = push_swap.h libft/libft.h
 
 OBJS_DIR = objects
@@ -31,7 +32,7 @@ $(NAME): $(OBJS)
 	@echo building push_swap...
 
 $(BONUS): $(BONUS_OBJ)
-	@$(CC) $(FLAGS) -o $(BONUS) $(OBJS)
+	@$(CC) $(FLAGS) -o $(BONUS) $(BONUS_OBJ)
 	@echo building bonus...
 
 $(OBJS_DIR)/%.o: %.c ${HEADERS}
@@ -41,7 +42,7 @@ $(OBJS_DIR)/%.o: %.c ${HEADERS}
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR) all
 
-bonus: $(BONUS)
+bonus: $(LIBFT) $(BONUS)
 
 clean:
 	@rm -rf $(OBJS_DIR) $(BONUS)
@@ -49,7 +50,8 @@ clean:
 	@echo removing objects files...
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BONUS)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re : fclean all
 
