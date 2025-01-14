@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 16:45:54 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 17:32:25 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,23 @@ int	check_wrong_minus(int ac, char **av, int *stack_a, int single)
 		i++;
 	}
 	return (1);
+}
+
+size_t	countnum(char *argv)
+{
+	size_t	size;
+	size_t	i;
+
+	i = 0;
+	size = 0;
+	while (argv[i])
+	{
+		while ((argv[i] == ' ') || (argv[i] == '+') || (argv[i] == '-'))
+			i++;
+		if (ft_isdigit(argv[i]))
+			size++;
+		while (ft_isdigit(argv[i]))
+			i++;
+	}
+	return (size);
 }
