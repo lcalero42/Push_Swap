@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 13:21:55 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 16:45:45 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	print_error(void);
 
 void	print_error_free(int *stack_a);
 
-int		check_wrong_minus(int ac, char **av, int *stack_a);
+int		check_wrong_minus(int ac, char **av, int *stack_a, int single);
+
+void	ft_free(char **av, int size);
 
 //algorithm utils
 int		is_sorted(int *stack_a, int size_a);

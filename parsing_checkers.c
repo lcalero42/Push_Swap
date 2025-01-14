@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_functions.c                                :+:      :+:    :+:   */
+/*   parsing_checkers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:26:26 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 14:03:00 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 16:45:54 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	check_duplicates_minus_str(char *str)
 
 /*This function processes the minus/plus checkings for
 every arguments in entry*/
-int	check_wrong_minus(int ac, char **av, int *stack_a)
+int	check_wrong_minus(int ac, char **av, int *stack_a, int single)
 {
 	int	i;
 
@@ -73,6 +73,8 @@ int	check_wrong_minus(int ac, char **av, int *stack_a)
 		if (!check_duplicates_minus_str(av[i]))
 		{
 			free(stack_a);
+			if (single)
+				ft_free(av, ac);
 			print_error();
 			return (0);
 		}

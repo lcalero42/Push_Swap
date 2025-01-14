@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:05:50 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/13 12:45:34 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 16:42:58 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	av_len(char **av)
 
 /*This function correctly frees all the elements
 of a 2D string*/
-static void	ft_free(char **av, int size)
+void	ft_free(char **av, int size)
 {
 	int	i;
 
@@ -62,29 +62,29 @@ through the string and storing in stack_a the value
 that atoi returns when we cross a number*/
 static int	*parse_single_str(char **av, int *size)
 {
-	int	len;
 	int	i;
 	int	*stack_a;
 
 	av = ft_split(av[1], ' ');
 	if (!av)
 		return (NULL);
-	len = av_len(av);
-	*size = len;
-	stack_a = malloc(len * sizeof(int));
+	*size = av_len(av);
+	stack_a = malloc(*size * sizeof(int));
 	if (!stack_a)
-		return (free(av), NULL);
+		return (ft_free(av, *size), NULL);
+	if (!(*size))
+		return (free(stack_a), ft_free(av, *size), print_error(), NULL);
 	i = 0;
-	while (i < len)
+	while (i < *size)
 	{
-		if (!is_num(av[i]))
-			return (free(stack_a), ft_free(av, len), print_error(), NULL);
+		if (!is_num(av[i]) || !av[i][0])
+			return (free(stack_a), ft_free(av, *size), print_error(), NULL);
 		stack_a[i] = ft_atoi(av[i], stack_a);
 		i++;
 	}
-	check_wrong_minus(len, av, stack_a);
+	check_wrong_minus(*size, av, stack_a, 1);
+	ft_free(av, *size);
 	check_duplicates(stack_a, *size);
-	ft_free(av, len);
 	return (stack_a);
 }
 
@@ -113,7 +113,7 @@ int	*parse_input(int ac, char **av, int *size)
 		j++;
 		i++;
 	}
-	check_wrong_minus(ac, av, stack_a);
+	check_wrong_minus(ac, av, stack_a, 0);
 	check_duplicates(stack_a, *size);
 	return (stack_a);
 }
