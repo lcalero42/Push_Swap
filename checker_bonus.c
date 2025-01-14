@@ -6,12 +6,15 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:53:53 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 15:25:30 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 18:51:43 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*This fuction checks which move has been written and must be
+processed for the line in parameter. It also returns the next
+line to check*/
 static char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 {
 	if (!ft_strncmp("sa", str, 2))
@@ -41,6 +44,9 @@ static char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 	return (get_next_line(0));
 }
 
+/*This function checks each time which move to apply to the line
+that is being processed and applies it. It also checks at the end
+if the commands sorted the stacks correctly*/
 static void	apply_moves(int *a, int *b, t_sizes *sizes)
 {
 	char	*line;
