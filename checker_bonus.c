@@ -6,13 +6,13 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:53:53 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 14:38:51 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 15:25:30 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
+static char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 {
 	if (!ft_strncmp("sa", str, 2))
 		sa(a, sizes->a);
@@ -41,7 +41,7 @@ char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 	return (get_next_line(0));
 }
 
-void	apply_moves(int *a, int *b, t_sizes *sizes)
+static void	apply_moves(int *a, int *b, t_sizes *sizes)
 {
 	char	*line;
 	char	*tmp;
