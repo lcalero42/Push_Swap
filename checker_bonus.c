@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:53:53 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 13:45:36 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/14 14:38:51 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 	return (get_next_line(0));
 }
 
-#include <stdio.h>
 void	apply_moves(int *a, int *b, t_sizes *sizes)
 {
-	char *line;
-	char *tmp;
+	char	*line;
+	char	*tmp;
 
 	line = get_next_line(0);
 	while (line && *line != '\n')
