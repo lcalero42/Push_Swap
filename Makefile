@@ -25,34 +25,37 @@ LIBFT = $(LIBFT_DIR)/libft.a
 BONUS = checker
 BONUS_OBJ = $(addprefix $(OBJS_DIR)/, $(BONUS_SRCS:.c=.o))
 
-all = $(LIBFT) $(NAME)
+all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
+	@echo "Linking $(NAME)..."
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
-	@echo building push_swap...
 
 $(BONUS): $(BONUS_OBJ)
+	@echo "Linking $(BONUS)..."
 	@$(CC) $(FLAGS) -o $(BONUS) $(BONUS_OBJ)
-	@echo building bonus...
 
 $(OBJS_DIR)/%.o: %.c ${HEADERS}
 	@mkdir -p $(OBJS_DIR)
-	@$(CC) $(FLAGS) -c $< -o $@
+	@echo "Compiling $<..."
+	@$(CC) $(FLAGS) -c $< -o $@ >/dev/null 2>&1
 
 $(LIBFT):
-	@$(MAKE) -C $(LIBFT_DIR) all
+	@echo "Building libft..."
+	@$(MAKE) -C $(LIBFT_DIR) all >/dev/null 2>&1
 
 bonus: $(LIBFT) $(BONUS)
 
 clean:
+	@echo "Cleaning object files..."
 	@rm -rf $(OBJS_DIR) $(BONUS)
-	@$(MAKE) -C $(LIBFT_DIR) clean
-	@echo removing objects files...
+	@$(MAKE) -C $(LIBFT_DIR) clean >/dev/null 2>&1
 
 fclean: clean
+	@echo "Cleaning binaries..."
 	@rm -f $(NAME) $(BONUS)
-	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@$(MAKE) -C $(LIBFT_DIR) fclean >/dev/null 2>&1
 
-re : fclean all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
