@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:53:53 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 18:51:43 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:28:30 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@ processed for the line in parameter. It also returns the next
 line to check*/
 static char	*check_move(char *str, int *a, int *b, t_sizes *sizes)
 {
-	if (!ft_strncmp("sa", str, 2))
-		sa(a, sizes->a);
-	else if (!ft_strncmp("sb", str, 2))
-		sb(b, sizes->b);
-	else if (!ft_strncmp("ss", str, 2))
-		ss(a, b, sizes->a, sizes->b);
-	else if (!ft_strncmp("ra", str, 2))
-		ra(a, sizes->a);
-	else if (!ft_strncmp("rb", str, 2))
-		rb(b, sizes->b);
-	else if (!ft_strncmp("rr", str, 2) && ft_strlen(str) == 2)
-		rr(a, b, sizes->a, sizes->b);
-	else if (!ft_strncmp("rra", str, 3))
-		rra(a, sizes->a);
-	else if (!ft_strncmp("rrb", str, 3))
-		rrb(b, sizes->b);
-	else if (!ft_strncmp("rrr", str, 3))
-		rrr(a, b, sizes->a, sizes->b);
-	else if (!ft_strncmp("pb", str, 2))
-		pb(a, b, &sizes->a, &sizes->b);
-	else if (!ft_strncmp("pa", str, 2))
-		pa(a, b, &sizes->a, &sizes->b);
+	if (!ft_strncmp("sa\n", str, ft_strlen(str)))
+		sa_2(a, sizes->a);
+	else if (!ft_strncmp("sb\n", str, ft_strlen(str)))
+		sb_2(b, sizes->b);
+	else if (!ft_strncmp("ss\n", str, ft_strlen(str)))
+		ss_2(a, b, sizes->a, sizes->b);
+	else if (!ft_strncmp("ra\n", str, ft_strlen(str)))
+		ra_2(a, sizes->a);
+	else if (!ft_strncmp("rb\n", str, ft_strlen(str)))
+		rb_2(b, sizes->b);
+	else if (!ft_strncmp("rr\n", str, ft_strlen(str)))
+		rr_2(a, b, sizes->a, sizes->b);
+	else if (!ft_strncmp("rra\n", str, ft_strlen(str)))
+		rra_2(a, sizes->a);
+	else if (!ft_strncmp("rrb\n", str, ft_strlen(str)))
+		rrb_2(b, sizes->b);
+	else if (!ft_strncmp("rrr\n", str, ft_strlen(str)))
+		rrr_2(a, b, sizes->a, sizes->b);
+	else if (!ft_strncmp("pb\n", str, ft_strlen(str)))
+		pb_2(a, b, &sizes->a, &sizes->b);
+	else if (!ft_strncmp("pa\n", str, ft_strlen(str)))
+		pa_2(a, b, &sizes->a, &sizes->b);
 	else
 		print_error();
 	return (get_next_line(0));

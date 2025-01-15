@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/14 17:36:12 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/15 13:41:10 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,28 @@ void	sort_a(int *stack_a, int *stack_b, t_sizes *sizes);
 void	sort(int *stack_a, int *stack_b, t_sizes *sizes);
 
 void	sort_three(int *stack);
+
+//checker operations (not printing command)
+void	sa_2(int *stack_a, int size);
+
+void	sb_2(int *stack_b, int size);
+
+void	ss_2(int *stack_a, int *stack_b, int size_a, int size_b);
+
+void	pa_2(int *stack_a, int *stack_b, int *size_a, int *size_b);
+
+void	pb_2(int *stack_a, int *stack_b, int *size_a, int *size_b);
+
+void	ra_2(int *stack_a, int size_a);
+
+void	rb_2(int *stack_b, int size_b);
+
+void	rra_2(int *stack_a, int size_a);
+
+void	rrb_2(int *stack_b, int size_b);
+
+void	rr_2(int *stack_a, int *stack_b, int size_a, int size_b);
+
+void	rrr_2(int *stack_a, int *stack_b, int size_a, int size_b);
 
 #endif

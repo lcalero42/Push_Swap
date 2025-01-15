@@ -13,7 +13,8 @@ BONUS_SRCS = operations.c operations_2.c operations_3.c parse_input.c print_erro
 		parsing_checkers.c is_sorted.c ../libft/ft_split.c turkish_algorithm.c \
 		algorithm_utils.c solver_utils.c sort_three.c apply_moves_b.c apply_moves_a.c \
 		solver_utils_a.c sort.c checker_bonus.c ../libft/get_next_line.c ../libft/ft_memcpy.c \
-		../libft/ft_strchr.c ../libft/ft_bzero.c
+		../libft/ft_strchr.c ../libft/ft_bzero.c checker_operations_bonus.c checker_operations_bonus_2.c \
+		checker_operations_bonus_3.c
 HEADERS = push_swap.h libft/libft.h
 
 OBJS_DIR = objects
