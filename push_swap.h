@@ -6,7 +6,7 @@
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:27:04 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/15 13:41:10 by lcalero          ###   ########.fr       */
+/*   Updated: 2025/01/17 14:32:37 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int		check_wrong_minus(int ac, char **av, int *stack_a, int single);
 void	ft_free(char **av, int size);
 
 int		countnum(char *argv);
+
+int		ft_atoi_single_str(const char *nptr, int *stack_a, char **av, int size);
 
 //algorithm utils
 int		is_sorted(int *stack_a, int size_a);

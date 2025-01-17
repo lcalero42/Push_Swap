@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_single_str.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcalero <lcalero@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 15:37:23 by lcalero           #+#    #+#             */
-/*   Updated: 2025/01/17 14:31:47 by lcalero          ###   ########.fr       */
+/*   Created: 2025/01/17 14:30:37 by lcalero           #+#    #+#             */
+/*   Updated: 2025/01/17 14:31:25 by lcalero          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "limits.h"
-#include "../push_swap.h"
+#include <limits.h>
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr, int *stack_a)
+int	ft_atoi_single_str(const char *nptr, int *stack_a, char **av, int size)
 {
 	size_t	i;
 	long	res;
@@ -35,7 +34,7 @@ int	ft_atoi(const char *nptr, int *stack_a)
 	{
 		res = res * 10 + (nptr[i] - 48);
 		if ((sign == 1 && res > INT_MAX) || (sign == -1 && res * -1 < INT_MIN))
-			return (print_error_free(stack_a), 0);
+			return (ft_free(av, size), print_error_free(stack_a), 0);
 		i++;
 	}
 	return ((int)res * sign);
