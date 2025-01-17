@@ -1,6 +1,15 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
+RESET = \033[0m
+RED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+MAGENTA = \033[35m
+CYAN = \033[36m
+BOLD = \033[1m
+
 NAME = push_swap
 
 SRCS = operations.c operations_2.c operations_3.c parse_input.c print_error.c ../libft/ft_isdigit.c \
@@ -28,26 +37,26 @@ BONUS_OBJ = $(addprefix $(OBJS_DIR)/, $(BONUS_SRCS:.c=.o))
 all: $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "Linking $(NAME)..."
+	@echo "$(BOLD)$(BLUE)Linking $(NAME)...$(RESET)"
 	@$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 $(BONUS): $(BONUS_OBJ)
-	@echo "Linking $(BONUS)..."
+	@echo "$(BOLD)$(BLUE)Linking $(BONUS)...$(RESET)"
 	@$(CC) $(FLAGS) -o $(BONUS) $(BONUS_OBJ)
 
 $(OBJS_DIR)/%.o: %.c ${HEADERS}
 	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling $<..."
+	@echo "$(BOLD)$(GREEN)Compiling$(RESET) $<..."
 	@$(CC) $(FLAGS) -c $< -o $@ >/dev/null 2>&1
 
 $(LIBFT): ${HEADERS}
-	@echo "Building libft..."
+	@echo "$(BOLD)$(CYAN)Building libft...$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR) all >/dev/null 2>&1
 
 bonus: $(LIBFT) $(BONUS)
 
 clean:
-	@echo "Cleaning object files..."
+	@echo "$(BOLD)$(RED)Cleaning object files...$(RESET)"
 	@rm -rf $(OBJS_DIR) $(BONUS)
 	@$(MAKE) -C $(LIBFT_DIR) clean >/dev/null 2>&1
 
