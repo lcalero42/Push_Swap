@@ -11,7 +11,7 @@ SRCS = operations.c operations_2.c operations_3.c parse_input.c print_error.c ..
 BONUS_SRCS = operations.c operations_2.c operations_3.c parse_input.c print_error.c ../libft/ft_isdigit.c \
 		../libft/ft_atoi.c ../libft/ft_putstr_fd.c ../libft/ft_strncmp.c ../libft/ft_strlen.c \
 		parsing_checkers.c is_sorted.c ../libft/ft_split.c turkish_algorithm.c \
-		algorithm_utils.c solver_utils.c sort_three.c apply_moves_b.c apply_moves_a.c \
+		algorithm_utils.c solver_utils.c sort_three.c \
 		solver_utils_a.c sort.c checker_bonus.c ../libft/get_next_line.c ../libft/ft_memcpy.c \
 		../libft/ft_strchr.c ../libft/ft_bzero.c checker_operations_bonus.c checker_operations_bonus_2.c \
 		checker_operations_bonus_3.c
@@ -41,7 +41,7 @@ $(OBJS_DIR)/%.o: %.c ${HEADERS}
 	@echo "Compiling $<..."
 	@$(CC) $(FLAGS) -c $< -o $@ >/dev/null 2>&1
 
-$(LIBFT):
+$(LIBFT): ${HEADERS}
 	@echo "Building libft..."
 	@$(MAKE) -C $(LIBFT_DIR) all >/dev/null 2>&1
 
